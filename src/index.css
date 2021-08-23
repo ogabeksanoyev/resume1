@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+body {
+	font-family: 'Roboto', sans-serif;
+	font-size: 0.875rem;
+	font-weight: 400;
+	letter-spacing: 0.01071em;
+	line-height: 1.43;
+	color: #373737;
+	overflow-x: hidden;
+}
+
+a {
+	text-decoration: none !important;
+}
+a .MuiButtonBase-root {
+	color: #373737 !important;
+}
+
+ul {
+	padding: 0px;
+	list-style: none;
+}
+
+:root {
+	--primary-brand-color-300: #33c9ff;
+	--primary-brand-color-400: #00baff;
+	--primary-brand-color-600: #00a2ff;
+	--primary-brand-color-800: #00a2ff;
+	--primary-brand-color-alternate-400-light: #cff;
+	--secondary-brand-color-400: #ffea00;
+	--secondary-brand-color-600: #ffd200;
+	--secondary-brand-color-alternate-400: #0b212a;
+	--primary-background-color: #fff;
+	--primary-text-color-800: #202730;
+	--primary-text-color-200: #7990a1;
+	--primary-opposite-background-color-300: #10303d;
+	--primary-opposite-background-color-400: #0b212a;
+	--primary-opposite-text-color-800: #202730;
+	--light-text-primary-color: #7990a1;
+}
+
+section {
+	padding: 30px 0;
+	margin-top: 20px;
+}
+
+.title_h2 {
+	color: #202730;
+	line-height: 1.3;
+	font-weight: 900;
+	font-size: 30px;
+	text-align: center;
+}
+.text-link {
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+	font-size: 18px;
+	font-weight: 700;
+	display: block;
+}
+.text-link::after {
+	content: '>';
+	display: inline-block;
+	padding-left: 7px;
+}
