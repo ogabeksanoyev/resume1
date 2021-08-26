@@ -64,7 +64,7 @@ const Container = ({ children }) => {
                 <div className="r_search"> <Search /></div>
               </form>
               <SimpleListMenu />
-              <IconButton onClick={toggleTheme} >   {theme === "dark" && <Brightness4 /> || <Brightness7 />}   </IconButton>
+              <IconButton onClick={toggleTheme} >   {theme === "dark" && <Brightness7 /> || <Brightness4 />}   </IconButton>
             </div>
           </div>
         </HeaderWrapper>

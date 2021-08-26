@@ -20,6 +20,10 @@ ul {
 	padding: 0px;
 	list-style: none;
 }
+mark {
+	background: #ffea00;
+	padding: 3px;
+}
 
 :root {
 	--primary-brand-color-300: #33c9ff;

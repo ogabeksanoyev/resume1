@@ -16,7 +16,7 @@ color:${p => p.colors.color}
 `
 
 function App() {
-    const [theme, setTheme] = useState("dark")
+    const [theme, setTheme] = useState("light")
     const toggleTheme = () => theme === "dark" ? setTheme("light") : setTheme("dark");
     return (
         <AppWrapper colors={colors}>

@@ -276,7 +276,10 @@ const Solution = () => {
         </div>
       </section>
       <section className="customer">
+        <h2 className="container text-center">Join the <mark class="styled">100,000+ businesses</mark> already growing with us</h2>
+        <p className="container text-center">We are a global marketing software company, empowering you to run your business with the online marketing tools that you need. Take the next step forward and join the thousands of businesses growing by engaging audiences online everywhere.</p>
         <div className="carusel_container">
+
           {
             carusel.map((person, personIndex) => {
               const { img, title, text, name, full } = person
@@ -305,10 +308,58 @@ const Solution = () => {
 
             })
           }
-          <IconButton className="bg-warning prev" onClick={() => setIndex(index - 1)}><KeyboardArrowLeft /></IconButton>
-          <IconButton className="bg-warning next" onClick={() => setIndex(index + 1)}><ChevronRight /></IconButton>
+          <IconButton className="bg-light prev" onClick={() => setIndex(index - 1)}><KeyboardArrowLeft /></IconButton>
+          <IconButton className="bg-light next" onClick={() => setIndex(index + 1)}><ChevronRight /></IconButton>
         </div>
 
+      </section>
+      <section className="livechat">
+        <div className="container">
+          <div className="iner">
+
+            <article className="">
+              <h2><mark class="styled">When you need us,we're here.</mark> Our Customer Success Team  is always there for you.</h2>
+              <p>Contact our team anytime –</p>
+              <ul className="mb-5 mt-1">
+                <li>we're fully remote</li>
+                <li>we speak 8 languages</li>
+                <li>we're 100% committed to your success</li>
+              </ul>
+              <h3><mark>24 HOURS A DAY, 7 DAYS A WEEK</mark></h3>
+              <p class="btn-wrap">
+                <a class="text-link" href="#" title="CHAT NOW ">CHAT NOW</a>
+              </p>
+            </article>
+            <div className="iner_img">
+              <img style={{ width: "100%", height: "auto" }} src="https://us-ws.gr-cdn.com/images/pages/homepage/mobile/chat.webp" />
+            </div>
+
+          </div>
+        </div>
+      </section>
+      <section className="gdpr">
+        <div className="container">
+          <div className="row align-items-center">
+            <div className="col-md-6">
+              <article>
+                <h2>GDPR compliant</h2>
+                <p>Be completely transparent and GDPR compliant with GetResponse consent fields. Allow your contacts to provide their proper consent right when they sign up. Arm yourself with a detailed information log related to each consent field you need to manage.</p>
+                <ul>
+                  <li>All EU Countries and California</li>
+                  <li>Track changes</li>
+                  <li>Multiple fields creation</li>
+                  <li>Fully integrated</li>
+                </ul>
+                <p><a class="text-link" href="#">LEARN MORE</a></p>
+              </article>
+            </div>
+            <div className="col-md-6">
+              <div>
+                <img src="	https://us-ws.gr-cdn.com/images/pages/homepage/gdpr.webp" className="w-100"></img>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
     </SolutionWrapper >
   )
