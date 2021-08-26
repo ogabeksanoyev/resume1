@@ -1,6 +1,6 @@
 import './Footer.css';
 
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import {
 	ArrowRight,
@@ -11,6 +11,8 @@ import {
 	YouTube,
 } from '@material-ui/icons';
 import { Button } from '@material-ui/core';
+import FooterWrapper from './footerWrapper';
+import ThemeContext from '../../ThemeContext';
 
 const data = {
 	ul_1: [
@@ -57,8 +59,10 @@ const data = {
 
 const Footer = () => {
 	const [color, setColor] = useState(-1);
+	const { theme, toggleTheme, colors } = useContext(ThemeContext)
+	console.log(theme, colors);
 	return (
-		<footer className='p-1 mt-5' style={{ backgroundColor: "#f5f5f5" }} >
+		<FooterWrapper colors={colors} className='p-1 mt-5' style={{ backgroundColor: "#f5f5f5" }} >
 			<div className='footer-sites container'>
 				<div className='link-list'>
 					<h3>Product</h3>
@@ -257,7 +261,7 @@ const Footer = () => {
 					</p>
 				</div>
 			</div>
-		</footer>
+		</FooterWrapper>
 	);
 };
 

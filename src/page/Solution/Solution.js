@@ -1,6 +1,6 @@
-import { makeStyles, TextField } from '@material-ui/core'
-import { AccountBalanceOutlined, AddShoppingCartOutlined, BrightnessAutoOutlined, CollectionsBookmarkOutlined, DomainOutlined, EmailOutlined, FilterListOutlined, FilterTiltShiftOutlined, FlipCameraAndroidOutlined, FlipOutlined, FormatPaintOutlined, GroupWorkOutlined, ImageOutlined, MarkunreadOutlined, MessageOutlined, PeopleAltOutlined, PollOutlined, ReceiptOutlined, SettingsOutlined, SportsBasketballOutlined } from '@material-ui/icons'
-import React from 'react'
+import { Button, IconButton, makeStyles, TextField } from '@material-ui/core'
+import { AccountBalanceOutlined, AddShoppingCartOutlined, BrightnessAutoOutlined, ChevronRight, CollectionsBookmarkOutlined, DomainOutlined, EmailOutlined, FilterListOutlined, FilterTiltShiftOutlined, FlipCameraAndroidOutlined, FlipOutlined, FormatPaintOutlined, GroupWorkOutlined, ImageOutlined, KeyboardArrowLeft, MarkunreadOutlined, MessageOutlined, People, PeopleAltOutlined, PollOutlined, ReceiptOutlined, RotateRight, SettingsOutlined, SportsBasketballOutlined } from '@material-ui/icons'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import SolutionWrapper from './SolutionWrapper'
 
@@ -82,9 +82,45 @@ const card_people = [
   },
 
 ]
+const carusel = [
+  {
+    img: "https://us-ws.gr-cdn.com/images/pages/homepage/slide-6.png", title: "I can reach my goals faster", text: "GetResponse helps me to increase my revenues, improve my customer experience and sell more products and services. I really love it.", name: "Manuel Flaugnacco", full: "Vendere Energia"
+  },
+  {
+    img: "https://us-ws.gr-cdn.com/images/pages/homepage/slide-7.png", title: "Keep my business connected with clients", text: "GetResponse helps my business to connect with its audience in a clear and concise way. It’s easy and straightforward and if I get stuck, I can reach out.", name: "Nicola Lucie", full: "The Feminine Principle"
+  },
+  {
+    img: "https://us-ws.gr-cdn.com/images/pages/homepage/slide-3.png", title: "I love GetResponse interface", text: "GetResponse is a must-try email marketing tool. It offers a lot of features in one, well-designed platform.", name: "Maxime Hamelin", full: "Fondation de la Géosophie"
+  },
+  {
+    img: "https://us-ws.gr-cdn.com/images/pages/homepage/slide-1.png", title: "Excellent customer service!", text: "GetResponse gives me the ability to follow up with fresh leads and keep them engaged with my brand.", name: "Robert Waver", full: "Infusion Marketing"
+  },
+  {
+    img: "https://us-ws.gr-cdn.com/images/pages/homepage/slide-2.png", title: "Autoresponder emails are much simpler to use", text: "GetResponse's Autoresponders are so much simpler to use than the other tools with faster and truly available 24/7 customer support team.", name: "Seth Mosley", full: "Full Circle Music"
+  },
+  {
+    img: "https://us-ws.gr-cdn.com/images/pages/homepage/slide-3.png", title: "Better and cheaper than the competitors", text: "Great platform, easy to make high-quality emails, landing pages, ARs, forms, funnels.", name: "Pamela Moss", full: "The Soul Guide Inc"
+  },
+  {
+    img: "https://us-ws.gr-cdn.com/images/pages/homepage/slide-4.png", title: "GetResponse helps me run my business", text: "I've been with them for a long time and I'm not going anywhere. I love GetResponse's tracking, stats and features.", name: "Nick Nilsson", full: "BetterU, Inc."
+  },
+  {
+    img: "https://us-ws.gr-cdn.com/images/pages/homepage/slide-5.png", title: "The best user-friendly email automation", text: "GetResponse provides the best automation and landing pages, which helps me focus more on our business rather than spending time on designing webpages.", name: "Dibyajyoti Saikia", full: "Hiedenberg Inc"
+  },
+]
+
 
 
 const Solution = () => {
+  //slider
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const lastIndex = carusel.length - 1
+    if (index < 0) setIndex(lastIndex)
+    if (index > lastIndex) setIndex(0)
+  }, [index, carusel])
+
   return (
     <SolutionWrapper>
       <section className="info_f">
@@ -239,7 +275,42 @@ const Solution = () => {
           </div>
         </div>
       </section>
-    </SolutionWrapper>
+      <section className="customer">
+        <div className="carusel_container">
+          {
+            carusel.map((person, personIndex) => {
+              const { img, title, text, name, full } = person
+              //
+              let position = "nextSlide";
+              if (personIndex === index) {
+                position = "activeSlide"
+              }
+              if (personIndex === index - 1 || (index === 0 && personIndex === carusel.length - 1)) {
+                position = "lastSlide"
+              }
+
+
+              return (
+                <article className={position}>
+                  <div className="card_x">
+                    <div className="card_img"><img src={img} alt="people" className="person-img" /></div>
+                    <div className="card_info">
+                      <h3>{title}</h3>
+                      <p>{text}</p>
+                      <small>{name} <span>{full}</span></small>
+                    </div>
+                  </div>
+                </article>
+              )
+
+            })
+          }
+          <IconButton className="bg-warning prev" onClick={() => setIndex(index - 1)}><KeyboardArrowLeft /></IconButton>
+          <IconButton className="bg-warning next" onClick={() => setIndex(index + 1)}><ChevronRight /></IconButton>
+        </div>
+
+      </section>
+    </SolutionWrapper >
   )
 }
 

@@ -261,5 +261,108 @@ position: relative;
     }
 }
 
+.customer{
+    background: #f8fafc;
+  .prev,
+  .next{
+   position: absolute;
+   top: 50%;
+   transform: translateY(-50%);
+   display: grid;
+   place-items: center;
+  }
+  .prev{
+    left: 0;
+  }
+  .next{
+    right: 0;
+  }
+  article{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    opacity: 0;
+  }
+  article.activeSlide{
+    opacity: 1;
+    transform: translateX(0);
+  }
+  article.lastSlide{
+    transform: translateX(-100%);
+  }
+  article.nextSlide{
+    transform: translateX(100%);
+  }
+  
+  .carusel_container{
+    margin:0 auto;
+    margin-top: 4rem;
+    width: 80vw;
+    height: 450px;
+    max-width: 900px;
+    text-align: center;
+    position: relative;
+    display: flex;
+    overflow: hidden;
+  }
+  .card_x{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 56px 42px 50px;
+    background: #fff;
+    border-radius: 6px;
+    z-index: 10;
+    transition: transform .3s ease;
+    height: 450px;
+    
+    .card_info{
+    display: flex;
+    flex-direction: column;
+    flex-basis: 240px;
+    flex-shrink: 1;
+    flex-grow: 1;
+    padding: 10px;
+    min-width: 200px;
+    box-sizing: border-box;
+    h3{
+      color: #1f262f;
+    line-height: 1.2;
+    font-weight: 700;
+    font-size: 20px;
+    font-family: Source Sans Pro,helvetica,arial,sans-serif;
+    letter-spacing: .02em;
+    margin-bottom: 22px;
+    }
+    p{
+      font-size: 16px;
+    font-weight: 500;
+    line-height: 1.35;
+    color: #4d555e;
+    margin-bottom: 14px;
+    letter-spacing: .025em;
+    }
+    small{
+    color: #4d555e;
+    font-size: 14px;
+    font-family: Roboto,helvetica,arial,sans-serif;
+    font-weight: 700;
+    line-height: 1.6;
+    letter-spacing: .025em;
+    span{
+      font-size: 13px;
+    font-weight: 400;
+    display: block;
+    color:#7990a1
+    }
+    }
+    }
+  }
+}
+
 `
 export default SolutionWrapper
